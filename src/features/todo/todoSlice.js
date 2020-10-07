@@ -12,8 +12,9 @@ export const todoSlice = createSlice({
       state.splice(index, 1);
     },
     doneTodo: (state, action) => {
+      console.log(state);
       const index = state.map((todo) => todo.id).indexOf(action.payload);
-      state[index].done = true;
+      state[index].done = !state[index].done;
     },
   },
 });

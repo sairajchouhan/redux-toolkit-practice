@@ -1,9 +1,77 @@
 .todo {
-  background-color: black;
-  width: 100%;
-  margin: 50px auto;
-}
-.todo-container {
-  width: 60%;
+  max-width: 900px;
   margin: 0 auto;
+  height: 100vh;
+  padding: 80px;
+}
+
+.todo_container {
+  min-height: 300px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 30px;
+  background: rgba(196, 194, 194, 0.3);
+}
+
+.todo__input {
+  position: relative;
+  width: 60%;
+}
+
+.todo__input input {
+  height: 40px;
+  width: 100%;
+  border: 0;
+  outline: 0;
+  padding: 10px 20px;
+  font-size: 1.2em;
+  border-radius: 100px;
+  box-shadow: 0 4px 16px rgba(32, 33, 36, 0.16);
+}
+.todo__input div {
+  position: absolute;
+  top: 52%;
+  transform: translateY(-50%);
+  right: 5px;
+}
+
+.todo__send {
+  width: 30px;
+  height: 30px;
+  padding: 0;
+  margin: 0;
+  color: rgb(114, 113, 113);
+  background: transparent;
+  cursor: pointer;
+}
+.todo__list {
+  margin-top: 30px;
+  padding: 20px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.eachTodo {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  width: 100%;
+  height: 50px;
+  background-color: #dfdfdf;
+  align-items: center;
+  margin-top: 10px;
+}
+.eachTodo__btns {
+  display: flex;
+
+  width: 60px;
+  justify-content: space-between;
+  cursor: pointer;
+}
+.eachTodo__icon {
+  font-size: 1.2em;
 }

@@ -3,6 +3,7 @@ import { addTodo, selectTodo } from './todoSlice';
 import { useSelector, useDispatch } from 'react-redux';
 import EachTodo from './EachTodo';
 import './Todo.css';
+import { FaArrowCircleRight } from 'react-icons/fa';
 
 const genetrateId = () => {
   return Math.ceil(Math.random() * 1000000);
@@ -19,17 +20,22 @@ const Todo = () => {
   return (
     <div className="todo">
       <div className="todo_container">
-        <input
-          type="text"
-          value={input}
-          onChange={(e) => setInput(e.target.value)}
-        />
-        <button disabled={input.trim() === ''} onClick={handleClick}>
-          add
-        </button>
-        {todos.map(({ todo, id, done }) => (
-          <EachTodo todo={todo} key={id} id={id} done={done} />
-        ))}
+        <div className="todo__input">
+          <input
+            type="text"
+            value={input}
+            onChange={(e) => setInput(e.target.value)}
+            placeholder="New Todo"
+          />
+          <div disabled={input.trim() === ''} onClick={handleClick}>
+            <FaArrowCircleRight className="todo__send" />
+          </div>
+        </div>
+        <div className="todo__list">
+          {todos.map(({ todo, id, done }) => (
+            <EachTodo todo={todo} key={id} id={id} done={done} />
+          ))}
+        </div>
       </div>
     </div>
   );
